@@ -1,0 +1,272 @@
+/* ===============================
+   Huellitas - Login
+   CSS puro, sin frameworks
+   =============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: url('/img/FondoLogin.png') center/cover no-repeat fixed;
+}
+
+/* Capa oscura sobre la foto para que el formulario resalte y se lea bien */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(74, 55, 40, 0.35) 0%, rgba(74, 55, 40, 0.55) 100%);
+  z-index: 0;
+}
+
+.login-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 900px;
+  max-width: 95%;
+  min-height: 560px;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* --- Panel izquierdo: marca --- */
+.login-panel-brand {
+  flex: 1;
+  background: linear-gradient(160deg, #F4A261 0%, #E76F51 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+}
+
+.login-panel-brand::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12) 0, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.10) 0, transparent 40%);
+}
+
+.brand-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.paw-icon {
+  font-size: 56px;
+  margin-bottom: 10px;
+}
+
+.login-panel-brand h1 {
+  font-size: 32px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.login-panel-brand p {
+  font-size: 15px;
+  opacity: 0.95;
+  margin-bottom: 4px;
+}
+
+.brand-quote {
+  margin-top: 24px;
+  font-style: italic;
+  font-size: 13px;
+  opacity: 0.85;
+  line-height: 1.5;
+  max-width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Panel derecho: formulario --- */
+.login-panel-form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 340px;
+}
+
+.form-wrapper h2 {
+  color: #4A3728;
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: #9A8478;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.alert-error {
+  background: #FDECEC;
+  color: #C0392B;
+  border: 1px solid #F5B7B1;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  color: #6B5748;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #E8DED5;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #4A3728;
+  background: #FFFBF7;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #E76F51;
+  box-shadow: 0 0 0 3px rgba(231, 111, 81, 0.15);
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6B5748;
+  cursor: pointer;
+}
+
+.forgot-link {
+  color: #E76F51;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 13px;
+  background: #E76F51;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-login:hover {
+  background: #D9603F;
+}
+
+.btn-login:active {
+  transform: scale(0.98);
+}
+
+.register-text {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 13px;
+  color: #9A8478;
+}
+
+.register-text a {
+  color: #E76F51;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+/* --- Pantalla de bienvenida --- */
+.welcome-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-card {
+  background: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(210, 130, 60, 0.18);
+}
+
+.welcome-card h1 {
+  color: #4A3728;
+  margin-bottom: 10px;
+}
+
+.welcome-card p {
+  color: #9A8478;
+  margin-bottom: 24px;
+}
+
+.btn-logout {
+  display: inline-block;
+  width: auto;
+  padding: 12px 30px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+  .login-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .login-panel-brand {
+    padding: 30px;
+  }
+}
