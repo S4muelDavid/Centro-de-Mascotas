@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Huellitas · Centro de Adopción
 
 Aplicación web de un refugio de mascotas. Backend en Node/Express con
@@ -10,26 +9,125 @@ productos, inventarios, proveedores, veterinarios y empleados).
 Cada sección de la página está en su propio archivo y tiene su propia
 ruta hacia la base de datos, así que se pueden trabajar por separado.
 
-> **Esta versión fue adaptada a tu base real.** El proyecto original
-> traía su propio esquema (`adopcion_huellitas`, 5 tablas con otros
-> nombres de columna). Aquí todo el backend se reescribió para leer y
-> escribir directamente en tu base `mascotas`, sin perder ni un
-> registro. Ver la sección **"Cómo se adaptó a tu base real"** más
-> abajo para el detalle de cada cruce de tablas.
+
+## Manual de usuario
+
+Esta sección explica cómo usar la página ya en funcionamiento, sin
+entrar en código. Está pensada para cualquier persona del refugio o
+visitante que quiera adoptar, entregar una mascota o dejar su opinión.
+
+### 1. Entrar al sitio
+
+Al abrir la página (`http://localhost:5173` si la corres en tu
+computador) siempre aparece primero la pantalla de acceso. No se puede
+ver el catálogo ni ninguna otra sección sin una cuenta.
+
+- **¿Ya tienes cuenta?** Escribe tu correo y contraseña en **Entra a
+  tu cuenta** y pulsa **Entrar**.
+- **¿Primera vez?** Pulsa **Créala aquí**, completa nombre, apellido,
+  correo, teléfono (opcional) y una contraseña de mínimo 6 caracteres
+  (la barra de abajo te dice qué tan fuerte es). Repite la contraseña
+  y pulsa **Crear cuenta**. Quedas conectado de inmediato, sin pasos
+  extra.
+- Si el correo ya está registrado o la contraseña es incorrecta, la
+  página te lo dice arriba del formulario para que corrijas.
+- Mientras tengas la sesión abierta en el navegador, al volver a
+  entrar a la página no te vuelve a pedir el login.
+
+### 2. Moverse por el sitio
+
+Ya dentro, la barra superior tiene un botón por cada apartado:
+**Inicio, Servicios, Mascotas, Tienda, Equipo, Ingreso de mascotas y
+Opiniones**. Al pulsar uno te lleva directo a esa sección completa —no
+es scroll, es cambiar de página—. En pantallas pequeñas los mismos
+enlaces se agrupan detrás del botón de menú (☰).
+
+Arriba a la derecha ves tus iniciales y tu nombre, y el botón
+**Cerrar sesión** para salir de la cuenta.
+
+### 3. Inicio
+
+Es la portada. Muestra un saludo con tu nombre y, en la "pizarra",
+las cifras del refugio en tiempo real: cuántas mascotas buscan hogar,
+cuántas están en proceso de adopción y cuántas ya tienen familia.
+Desde aquí hay dos accesos directos: **Ver quién busca hogar** (te
+lleva a Mascotas) y **Entregar una mascota** (te lleva a Ingreso de
+mascotas).
+
+### 4. Servicios
+
+Lista lo que ofrece el refugio (por ejemplo, adopción responsable,
+seguimiento veterinario, hogares de paso). Es solo informativa, no
+requiere ninguna acción tuya.
+
+### 5. Mascotas en adopción
+
+El catálogo de animales disponibles.
+
+- Usa los botones de arriba (**Todas**, **Perro**, **Gato**, etc.)
+  para filtrar por especie.
+- Cada ficha muestra nombre, raza, edad, sexo, tamaño, una breve
+  descripción y si está esterilizada y vacunada.
+- Si dice **"Ya tiene hogar"** o **"En proceso"**, el botón de adoptar
+  queda desactivado: esa mascota ya no está disponible.
+- Para las que sí están disponibles, pulsa **"Quiero conocer a
+  [nombre]"**. Se abre una ventana con el correo
+  (`hola@huellitas.org`) y el teléfono del refugio para que agendes la
+  visita; menciona el nombre de la mascota al escribir.
+
+### 6. Tienda
+
+Catálogo de productos del refugio (alimento, accesorios, etc.), con
+precio y disponibilidad real de inventario ("Disponible", "Stock
+bajo" o "Agotado"). Arriba puedes escribir en el buscador para
+filtrar por nombre de producto. Es solo para consultar: la compra se
+coordina directamente con el refugio, no hay carrito en la página.
+
+### 7. Equipo
+
+Presenta a los veterinarios (con su especialidad) y al equipo humano
+del refugio (con su cargo), para que sepas quién está detrás de cada
+adopción. También es solo informativa.
+
+### 8. Ingreso de mascotas
+
+Para cuando tú tienes una mascota que necesita un nuevo hogar.
+
+1. La sección explica primero, paso a paso, cómo funciona el proceso
+   completo de principio a fin.
+2. Abajo llenas el formulario: nombre de la mascota, especie, edad
+   aproximada, su historia y estado de salud, y tus datos de contacto
+   (nombre, teléfono y correo —estos dos últimos ya vienen
+   diligenciados con los de tu cuenta, pero puedes cambiarlos—).
+3. Al pulsar **Enviar solicitud** queda registrada como pendiente para
+   que el equipo del refugio la revise; la página te confirma que se
+   envió y limpia el formulario para que puedas registrar otra si
+   quieres.
+
+### 9. Opiniones
+
+Aquí se leen y se publican las experiencias de quienes ya adoptaron.
+
+- Arriba ves el promedio de calificación (en estrellas) y cuántas
+  opiniones hay en total.
+- Para dejar la tuya, pulsa **"Contar mi experiencia"**: escribe el
+  nombre de la mascota que adoptaste (opcional), cuéntanos cómo fue el
+  proceso y cómo está hoy, y elige tu calificación de 1 a 5 estrellas.
+  Pulsa **Publicar opinión**.
+- Tu opinión no aparece en la lista pública de inmediato: primero pasa
+  por una revisión del equipo del refugio y solo se muestra una vez
+  aprobada. Es normal no verla al instante.
+
+### 10. Salir
+
+Pulsa **Cerrar sesión** en la esquina superior derecha en cualquier
+momento; te devuelve a la pantalla de acceso.
 
 ---
-=======
-# Huellitas - Login MVC (Node + MySQL) conectado a React (index.jsx)
-
-Proyecto completo, armado desde cero con arquitectura **Modelo-Vista-Controlador**
-en el backend, y un frontend en React cuyo `index.jsx` ya está conectado al
-login vía la API.
->>>>>>> 9b0a3d50ff3efb05d1e026d9170749023b58b402
 
 ## Estructura
 
 ```
-<<<<<<< HEAD
 huellitas/
 ├── backend/
 │   ├── server.js                    Punto de entrada
@@ -179,11 +277,7 @@ sección (.jsx)  ->  servicio (services/)  ->  apiClient  ->  API
 | Opiniones                  | `/api/opiniones`          | `opiniones` *(nueva, la crea la migración)*                        |
 | Historial de adopciones    | `/api/adopciones`         | `adopciones`                                                        |
 
-### Cómo se adaptó a tu base real
 
-Tu base (`mascotas`) no se parecía a la que traía el proyecto
-original, así que el backend se reescribió tabla por tabla. Lo más
-importante:
 
 - **`mascotas.estado`** en tu base es el estado de **salud**
   (`Saludable` / `En Tratamiento`). La *disponibilidad para adoptar*
@@ -268,118 +362,3 @@ POST   /api/adopciones               Registrar interés (requiere sesión)
 
 Las opiniones nuevas entran con `aprobado = 0` y solo aparecen en la
 página cuando alguien las aprueba.
-
----
-
-## Cómo agregar una sección nueva
-
-**Backend** — cuatro archivos:
-
-1. La tabla en `database/schema.sql`
-2. `models/MiCosa.js` con las consultas
-3. `controllers/miCosaController.js` con las validaciones
-4. `routes/miCosaRoutes.js`, y registrarlo en `routes/index.js`
-
-**Frontend** — tres archivos:
-
-1. `services/miCosaService.js`
-2. `sections/MiCosa.jsx` usando `useDatosSeccion`
-3. `styles/secciones/micosa.css`
-
-Y añadir `<MiCosa />` en `pages/Inicio.jsx` y el enlace en
-`components/Navbar.jsx`.
-
----
-
-## Notas técnicas
-
-- Las contraseñas se guardan con hash bcrypt, nunca en texto plano.
-- La sesión va en una cookie `httpOnly` (`express-session`). El frontend
-  usa `credentials: 'include'` para que la cookie viaje entre los
-  puertos 5173 y 4000.
-- Los filtros de mascotas se resuelven en el servidor (cláusula `WHERE`),
-  no en el navegador, para que sigan funcionando cuando el catálogo crezca.
-- Si una mascota no tiene `foto_url`, la ficha dibuja un retrato generado
-  a partir de su nombre, para que el catálogo no se vea roto.
-- Si vas a poner esto en producción con backend y frontend en dominios
-  distintos, cambia `cookie.secure` a `true` en `server.js` y evalúa
-  pasar de cookies de sesión a JWT.
-
----
-
-## Verificado
-
-- `npm run build` del frontend compila sin errores.
-- `schema.sql` y `seed.sql` corren limpios en MySQL/MariaDB.
-- Flujo completo probado contra MySQL real: registro, login, correo
-  duplicado, contraseña incorrecta, sesión, logout, listado y filtro de
-  mascotas, resumen, servicios, envío de solicitud y publicación de
-  opinión.
-- Sin MySQL, la API responde con mensajes claros y el frontend sigue
-  mostrando contenido de ejemplo.
-=======
-adopcion-login-full/
-├── backend/                    # API en Node/Express (MVC)
-│   ├── server.js                 # Punto de entrada
-│   ├── config/db.js               # Conexión (pool) a MySQL
-│   ├── models/Usuario.js          # Modelo: consultas SQL
-│   ├── controllers/authController.js  # Controlador: lógica de login
-│   ├── routes/authRoutes.js       # Rutas /api/auth/*
-│   ├── database/schema.sql        # Crea la BD y la tabla "usuarios"
-│   ├── database/generarHash.js    # Genera un hash bcrypt de prueba
-│   └── .env.example
-│
-└── frontend/                   # React (Vite)
-    ├── index.html
-    ├── vite.config.js
-    ├── .env.example
-    └── src/
-        ├── index.jsx              # Punto de entrada de React
-        ├── App.jsx                # Decide Login vs Bienvenida según la sesión
-        ├── pages/Login.jsx        # Formulario conectado a POST /api/auth/login
-        ├── pages/Bienvenida.jsx   # Vista placeholder tras iniciar sesión
-        └── styles/login.css       # CSS puro, diseño Huellitas
-```
-
-## Cómo quedaron conectados backend y frontend
-
-- El `index.jsx` monta `<App />`, que al cargar consulta
-  `GET /api/auth/sesion` para saber si ya hay sesión activa.
-- Si no hay sesión, se muestra `Login.jsx`, que envía
-  `POST /api/auth/login` con `correo` y `password`.
-- El backend valida contra MySQL (`bcryptjs` para comparar el hash) y,
-  si es correcto, guarda `usuario` en una cookie de sesión (`express-session`).
-- El frontend usa `fetch(..., { credentials: 'include' })` para que esa
-  cookie viaje entre `localhost:5173` (React) y `localhost:4000` (API).
-
-## Instalación y ejecución
-
-**1. Backend**
-```
-cd backend
-npm install
-cp .env.example .env      # y ajusta tus credenciales de MySQL
-```
-Crea la base ejecutando `database/schema.sql` en tu servidor MySQL.
-Luego genera un usuario de prueba:
-```
-node database/generarHash.js
-```
-Copia el hash resultante en el `INSERT` comentado dentro de `schema.sql`
-y ejecútalo. Después arranca el servidor:
-```
-npm run dev      # o: npm start
-```
-Quedará corriendo en `http://localhost:4000`.
-
-**2. Frontend**
-```
-cd frontend
-npm install
-cp .env.example .env      # normalmente no necesitas cambiar nada
-npm run dev
-```
-Quedará corriendo en `http://localhost:5173`. Abre esa URL y verás
-el login ya funcionando contra el backend.
-
->>>>>>> 9b0a3d50ff3efb05d1e026d9170749023b58b402
