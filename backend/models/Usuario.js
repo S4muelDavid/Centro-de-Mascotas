@@ -1,4 +1,5 @@
 // backend/models/Usuario.js
+<<<<<<< HEAD
 // Modelo de usuarios sobre la tabla REAL `usuarios` de la base `mascotas`:
 //   id, username, password, nombre, apellido, correo, telefono, role, created_at
 //
@@ -66,6 +67,27 @@ const Usuario = {
   // Se usa para migrar en caliente las contraseñas de texto plano a bcrypt.
   async actualizarPassword(id, passwordHash) {
     await pool.query('UPDATE usuarios SET password = ? WHERE id = ?', [passwordHash, id]);
+=======
+// Modelo: encapsula todo el acceso a datos relacionado con usuarios
+
+const pool = require('../config/db');
+
+const Usuario = {
+  async buscarPorCorreo(correo) {
+    const [rows] = await pool.query(
+      'SELECT * FROM usuarios WHERE correo = ? LIMIT 1',
+      [correo]
+    );
+    return rows[0] || null;
+  },
+
+  async crear({ nombre, correo, passwordHash }) {
+    const [result] = await pool.query(
+      'INSERT INTO usuarios (nombre, correo, password) VALUES (?, ?, ?)',
+      [nombre, correo, passwordHash]
+    );
+    return result.insertId;
+>>>>>>> 9b0a3d50ff3efb05d1e026d9170749023b58b402
   }
 };
 

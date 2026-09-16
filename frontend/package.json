@@ -1,7 +1,11 @@
 {
   "name": "huellitas-frontend",
   "private": true,
+<<<<<<< HEAD
   "version": "2.0.0",
+=======
+  "version": "1.0.0",
+>>>>>>> 9b0a3d50ff3efb05d1e026d9170749023b58b402
   "type": "module",
   "scripts": {
     "dev": "vite",

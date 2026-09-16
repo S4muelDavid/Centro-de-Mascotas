@@ -1,5 +1,6 @@
 {
   "name": "huellitas-backend",
+<<<<<<< HEAD
   "version": "2.0.0",
   "description": "API MVC del centro de adopcion Huellitas (auth, mascotas, servicios, solicitudes y opiniones)",
   "main": "server.js",
@@ -7,6 +8,14 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "hash": "node database/generarHash.js"
+=======
+  "version": "1.0.0",
+  "description": "API de autenticacion MVC para el centro de adopcion Huellitas",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+>>>>>>> 9b0a3d50ff3efb05d1e026d9170749023b58b402
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
