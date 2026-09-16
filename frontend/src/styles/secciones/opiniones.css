@@ -1,0 +1,149 @@
+/* ============================================================
+   Huellitas · sección Opiniones
+   Testimonios tipografiados en grande, sin tarjetas: la voz de
+   las familias es el contenido, no el contenedor.
+   ============================================================ */
+
+.opiniones {
+  background: var(--tinta);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.opiniones .seccion-encabezado h2 { color: var(--blanco); }
+.opiniones .seccion-encabezado p  { color: rgba(255, 255, 255, 0.6); }
+
+.opiniones-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--e-3);
+  margin-bottom: var(--e-5);
+}
+
+.opiniones-encabezado .seccion-encabezado { margin-bottom: 0; }
+
+.opiniones-promedio {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+.promedio-numero {
+  font-family: var(--fuente-titulo);
+  font-size: var(--t-lg);
+  font-weight: 700;
+  color: var(--blanco);
+}
+
+.promedio-total {
+  font-size: var(--t-xs);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* --- Lista de testimonios --- */
+.opiniones-lista {
+  list-style: none;
+  columns: 2;
+  column-gap: var(--e-5);
+}
+
+.opinion {
+  break-inside: avoid;
+  padding: var(--e-3) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: var(--e-2);
+}
+
+.opinion blockquote {
+  font-family: var(--fuente-titulo);
+  font-size: var(--t-md);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0.6rem 0 var(--e-2);
+  max-width: 44ch;
+}
+
+.opinion footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.opinion-autor {
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--blanco);
+}
+
+.opinion-mascota {
+  font-size: var(--t-xs);
+  color: var(--miel);
+}
+
+/* --- Formulario para aportar una opinión --- */
+.opiniones-aporte {
+  margin-top: var(--e-4);
+}
+
+.opinion-formulario {
+  max-width: 560px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radio-lg);
+  padding: var(--e-3);
+}
+
+.opinion-formulario h3 {
+  color: var(--blanco);
+  font-size: var(--t-md);
+  margin-bottom: var(--e-2);
+}
+
+.opinion-formulario .campo label,
+.opinion-formulario .campo-etiqueta {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.opinion-formulario .campo input,
+.opinion-formulario .campo textarea {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--blanco);
+}
+
+.opinion-formulario .campo input::placeholder,
+.opinion-formulario .campo textarea::placeholder {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.opinion-formulario .campo input:focus,
+.opinion-formulario .campo textarea:focus {
+  border-color: var(--miel);
+  box-shadow: 0 0 0 3px rgba(232, 163, 61, 0.2);
+}
+
+.opinion-formulario .estrella-vacia { color: rgba(255, 255, 255, 0.25); }
+
+.opinion-acciones {
+  display: flex;
+  gap: var(--e-2);
+  flex-wrap: wrap;
+  margin-top: var(--e-2);
+}
+
+.opinion-acciones .boton-contorno { color: rgba(255, 255, 255, 0.7); }
+
+.opiniones .aviso-demo { color: rgba(255, 255, 255, 0.45); }
+.opiniones .aviso-demo code { background: rgba(255, 255, 255, 0.1); color: rgba(255,255,255,0.8); }
+
+@media (max-width: 760px) {
+  .opiniones-lista { columns: 1; }
+  .opiniones-encabezado { flex-direction: column; align-items: flex-start; }
+}

@@ -1,0 +1,175 @@
+/* ============================================================
+   Huellitas · sección Mascotas
+   Es la sección con más peso visual del sitio: las fichas son
+   lo que la gente viene a ver.
+   ============================================================ */
+
+.mascotas {
+  background: var(--arena);
+}
+
+.mascotas-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--e-3);
+  margin-bottom: var(--e-4);
+}
+
+.mascotas-encabezado .seccion-encabezado { margin-bottom: 0; }
+
+/* --- Filtros por especie --- */
+.filtros {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filtro {
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--borde);
+  background: var(--papel);
+  font-size: var(--t-sm);
+  color: var(--gris);
+  transition: all 0.15s ease;
+}
+
+.filtro:hover { border-color: var(--musgo); color: var(--tinta); }
+
+.filtro-activo {
+  background: var(--bosque);
+  border-color: var(--bosque);
+  color: var(--blanco);
+}
+
+/* --- Rejilla de fichas --- */
+.mascotas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  gap: var(--e-3);
+}
+
+.ficha {
+  display: flex;
+  flex-direction: column;
+  background: var(--blanco);
+  border-radius: var(--radio-lg);
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ficha:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-media);
+}
+
+/* Retrato: foto real, o un fondo generado con la inicial */
+.ficha-retrato {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.ficha-retrato img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ficha-huella {
+  position: absolute;
+  bottom: -14px;
+  right: -10px;
+  transform: rotate(-16deg);
+}
+
+.ficha-inicial {
+  position: relative;
+  font-family: var(--fuente-titulo);
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.ficha-estado {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: var(--tinta);
+  color: var(--blanco);
+  font-size: var(--t-xs);
+  font-weight: 500;
+}
+
+.ficha-cuerpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--e-3);
+}
+
+.ficha-cuerpo h3 {
+  font-size: var(--t-lg);
+  margin-bottom: 0.15rem;
+}
+
+.ficha-datos {
+  font-size: var(--t-xs);
+  color: var(--musgo);
+  margin-bottom: 0.7rem;
+}
+
+.ficha-descripcion {
+  font-size: var(--t-sm);
+  font-weight: 300;
+  color: var(--gris);
+  line-height: 1.55;
+  margin-bottom: var(--e-2);
+}
+
+.ficha-salud {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: var(--e-3);
+}
+
+.ficha-salud li {
+  font-size: var(--t-xs);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.ficha-salud .si { background: #E7F3EC; color: var(--exito); }
+.ficha-salud .no { background: var(--arena); color: var(--gris); }
+
+.ficha-boton {
+  margin-top: auto;
+  width: 100%;
+  font-size: var(--t-xs);
+  padding: 0.75rem 1rem;
+}
+
+.mascotas-vacio {
+  padding: var(--e-5) var(--e-3);
+  text-align: center;
+  color: var(--gris);
+  background: var(--papel);
+  border-radius: var(--radio-lg);
+  max-width: 52ch;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .mascotas-grid { grid-template-columns: 1fr; }
+  .mascotas-encabezado { flex-direction: column; align-items: flex-start; }
+}

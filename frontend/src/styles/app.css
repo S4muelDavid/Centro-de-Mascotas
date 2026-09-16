@@ -1,0 +1,218 @@
+/* ============================================================
+   Huellitas · estilos compartidos entre secciones
+   (campos de formulario, esqueletos de carga, estrellas, modal)
+   ============================================================ */
+
+/* --- Pantalla de carga inicial --- */
+.pantalla-carga {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--e-2);
+  color: var(--musgo);
+  background: var(--papel);
+}
+
+.pantalla-carga p {
+  color: var(--gris);
+  font-size: var(--t-sm);
+}
+
+.pantalla-carga svg {
+  animation: latido 1.4s ease-in-out infinite;
+}
+
+@keyframes latido {
+  0%, 100% { transform: scale(1);    opacity: 0.7; }
+  50%      { transform: scale(1.12); opacity: 1; }
+}
+
+/* --- Campos de formulario --- */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: var(--e-2);
+}
+
+.campo label,
+.campo-etiqueta {
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--tinta);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: var(--blanco);
+  border: 1.5px solid var(--borde);
+  border-radius: var(--radio-sm);
+  font-size: var(--t-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.55;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+  color: #A8A096;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--musgo);
+  box-shadow: 0 0 0 3px rgba(76, 128, 100, 0.16);
+}
+
+.campo-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--e-2);
+}
+
+.campo-corto { max-width: 100%; }
+
+.campo-password { position: relative; }
+
+.campo-password input { padding-right: 4.5rem; }
+
+.ver-password {
+  position: absolute;
+  right: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  color: var(--musgo);
+  padding: 0.25rem 0.4rem;
+  border-radius: 4px;
+}
+
+.ver-password:hover { color: var(--bosque); text-decoration: underline; }
+
+/* --- Esqueletos de carga --- */
+.esqueleto-grupo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--e-3);
+}
+
+.esqueleto {
+  border-radius: var(--radio-md);
+  background: linear-gradient(90deg, var(--arena) 25%, #F8F1E6 50%, var(--arena) 75%);
+  background-size: 200% 100%;
+  animation: brillo 1.4s ease-in-out infinite;
+}
+
+@keyframes brillo {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* --- Avisos de origen de datos --- */
+.aviso-demo {
+  margin-top: var(--e-3);
+  font-size: var(--t-xs);
+  color: var(--gris);
+  border-left: 2px solid var(--miel);
+  padding-left: 0.75rem;
+}
+
+.aviso-demo code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.95em;
+  background: var(--arena);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.error-seccion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-2);
+  padding: var(--e-3);
+  background: #FBEAE6;
+  border-radius: var(--radio-md);
+  color: var(--error);
+}
+
+/* --- Estrellas --- */
+.estrellas {
+  display: inline-flex;
+  gap: 2px;
+  line-height: 0;
+}
+
+.estrellas svg {
+  width: 18px;
+  height: 18px;
+}
+
+.estrella-llena  { color: var(--miel); fill: currentColor; }
+.estrella-vacia  { color: var(--borde); fill: currentColor; }
+
+.estrellas-editables button {
+  padding: 2px;
+  border-radius: 4px;
+  transition: transform 0.12s ease;
+}
+
+.estrellas-editables button:hover { transform: scale(1.18); }
+.estrellas-editables svg { width: 26px; height: 26px; }
+
+/* --- Modal --- */
+.modal-fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: var(--e-3);
+  background: rgba(20, 38, 32, 0.55);
+  backdrop-filter: blur(3px);
+}
+
+.modal {
+  width: min(460px, 100%);
+  background: var(--blanco);
+  border-radius: var(--radio-lg);
+  padding: var(--e-4);
+  box-shadow: var(--sombra-alta);
+  text-align: left;
+}
+
+.modal h3 {
+  font-size: var(--t-lg);
+  margin-bottom: var(--e-2);
+}
+
+.modal p {
+  color: var(--gris);
+  margin-bottom: var(--e-3);
+  font-size: var(--t-sm);
+}
+
+.modal a { color: var(--bosque); font-weight: 500; }
+
+@media (max-width: 640px) {
+  .campo-fila { grid-template-columns: 1fr; }
+}

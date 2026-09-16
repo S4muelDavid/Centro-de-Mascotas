@@ -1,0 +1,194 @@
+/* ============================================================
+   Huellitas · pantallas de acceso (Login y Registro)
+   Dos paneles: a la izquierda la marca sobre la foto del refugio,
+   a la derecha el formulario sobre papel limpio.
+   ============================================================ */
+
+.auth {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  background: var(--papel);
+}
+
+/* --- Panel de marca --- */
+.auth-marca {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--e-6) var(--e-5);
+  color: var(--blanco);
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(20, 38, 32, 0.45) 0%, rgba(20, 38, 32, 0.88) 100%),
+    url('/img/FondoLogin.png') center/cover no-repeat;
+}
+
+.auth-marca-contenido {
+  position: relative;
+  z-index: 2;
+  max-width: 34ch;
+}
+
+.auth-marca-contenido > svg {
+  color: var(--miel);
+  margin-bottom: var(--e-2);
+}
+
+.auth-marca h1 {
+  font-size: var(--t-3xl);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.auth-lema {
+  font-size: var(--t-sm);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: var(--e-3);
+}
+
+.auth-frase {
+  font-family: var(--fuente-titulo);
+  font-style: italic;
+  font-size: var(--t-md);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.95);
+  padding-left: var(--e-2);
+  border-left: 2px solid var(--miel);
+}
+
+/* Huellas decorativas que suben por el panel */
+.auth-marca-huellas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.07);
+  pointer-events: none;
+}
+
+.auth-marca-huellas svg { position: absolute; }
+.auth-marca-huellas svg:nth-child(1) { top: 8%;  right: 6%;  transform: rotate(18deg); }
+.auth-marca-huellas svg:nth-child(2) { top: 32%; right: 26%; transform: rotate(-12deg); }
+.auth-marca-huellas svg:nth-child(3) { top: 52%; right: 12%; transform: rotate(28deg); }
+
+/* --- Panel de formulario --- */
+.auth-panel {
+  display: grid;
+  place-items: center;
+  padding: var(--e-5) var(--e-4);
+}
+
+.auth-formulario {
+  width: min(400px, 100%);
+}
+
+.auth-formulario h2 {
+  font-size: var(--t-xl);
+  margin-bottom: 0.4rem;
+}
+
+.auth-subtitulo {
+  color: var(--gris);
+  font-size: var(--t-sm);
+  margin-bottom: var(--e-3);
+}
+
+.auth-formulario .aviso { margin-bottom: var(--e-2); }
+
+.auth-opciones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-2);
+  margin: var(--e-1) 0 var(--e-3);
+  font-size: var(--t-sm);
+}
+
+.casilla {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--gris);
+  cursor: pointer;
+}
+
+.casilla input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--bosque);
+  cursor: pointer;
+}
+
+.auth-enlace {
+  color: var(--bosque);
+  font-weight: 500;
+  font-size: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(46, 93, 75, 0.3);
+  padding: 0;
+}
+
+.auth-enlace:hover { border-bottom-color: var(--bosque); }
+
+.auth-boton {
+  width: 100%;
+  padding: 0.95rem;
+  font-size: var(--t-base);
+}
+
+.auth-cambiar {
+  margin-top: var(--e-3);
+  padding-top: var(--e-3);
+  border-top: 1px solid var(--borde);
+  font-size: var(--t-sm);
+  color: var(--gris);
+  text-align: center;
+}
+
+/* --- Medidor de fuerza de contraseña --- */
+.fuerza {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.15rem;
+}
+
+.fuerza-barras {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.fuerza-barras span {
+  height: 4px;
+  flex: 1;
+  border-radius: 999px;
+  background: var(--borde);
+  transition: background-color 0.2s ease;
+}
+
+.fuerza-barras span.activa           { background: var(--coral); }
+.fuerza-barras span.activa.nivel-3   { background: var(--miel); }
+.fuerza-barras span.activa.nivel-4   { background: var(--exito); }
+
+.fuerza-texto {
+  font-size: var(--t-xs);
+  color: var(--gris);
+  min-width: 6ch;
+}
+
+/* --- Adaptación a pantallas pequeñas --- */
+@media (max-width: 880px) {
+  .auth { grid-template-columns: 1fr; }
+
+  .auth-marca {
+    padding: var(--e-5) var(--e-3) var(--e-4);
+    align-items: center;
+    min-height: 40vh;
+  }
+
+  .auth-marca h1 { font-size: var(--t-2xl); }
+  .auth-frase { display: none; }
+  .auth-panel { padding: var(--e-4) var(--e-3) var(--e-5); }
+}

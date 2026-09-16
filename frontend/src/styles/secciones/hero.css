@@ -1,0 +1,128 @@
+/* ============================================================
+   Huellitas · sección Hero (portada)
+   ============================================================ */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--bosque);
+  color: var(--blanco);
+  padding: var(--e-7) 0 var(--e-6);
+}
+
+/* Degradado sutil para dar profundidad al verde */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 90% at 15% 0%, #3C7460 0%, #2E5D4B 45%, #22483A 100%);
+}
+
+.hero-fondo {
+  position: absolute;
+  inset: 0;
+  color: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.hero-fondo svg { position: absolute; }
+.hero-fondo svg:nth-child(1) { bottom: -30px; left: 62%;  transform: rotate(-18deg); }
+.hero-fondo svg:nth-child(2) { top: 14%;      left: 52%;  transform: rotate(24deg); }
+.hero-fondo svg:nth-child(3) { top: 46%;      left: 44%;  transform: rotate(-8deg); }
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.35fr 0.9fr;
+  gap: var(--e-5);
+  align-items: end;
+}
+
+.hero-saludo {
+  font-size: var(--t-sm);
+  color: var(--miel);
+  margin-bottom: var(--e-2);
+}
+
+.hero-texto h1 {
+  font-size: clamp(2.6rem, 6.2vw, var(--t-3xl));
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin-bottom: var(--e-3);
+}
+
+.hero-bajada {
+  max-width: 52ch;
+  font-size: var(--t-md);
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--e-4);
+}
+
+.hero-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+}
+
+/* --- Pizarra con las cifras del refugio --- */
+.pizarra {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radio-lg);
+  padding: var(--e-3);
+  backdrop-filter: blur(6px);
+}
+
+.pizarra-titulo {
+  font-family: var(--fuente-texto);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  color: var(--miel);
+  margin-bottom: var(--e-2);
+}
+
+.pizarra-cifras {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.pizarra-cifras > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--e-2);
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.pizarra-cifras > div:last-child { border-bottom: none; }
+
+.pizarra-cifras dt {
+  font-size: var(--t-sm);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.pizarra-cifras dd {
+  font-family: var(--fuente-titulo);
+  font-size: var(--t-lg);
+  font-weight: 700;
+  color: var(--blanco);
+  font-variant-numeric: tabular-nums;
+}
+
+.pizarra-nota {
+  margin-top: var(--e-2);
+  font-size: var(--t-xs);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 900px) {
+  .hero { padding: var(--e-5) 0; }
+  .hero-inner { grid-template-columns: 1fr; gap: var(--e-4); }
+  .hero-fondo svg:nth-child(2),
+  .hero-fondo svg:nth-child(3) { display: none; }
+}

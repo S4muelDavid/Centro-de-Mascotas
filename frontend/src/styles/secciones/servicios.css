@@ -1,0 +1,57 @@
+/* ============================================================
+   Huellitas · sección Servicios
+   Lista en dos columnas separadas por líneas finas, no tarjetas:
+   son cuatro compromisos, no cuatro productos.
+   ============================================================ */
+
+.servicios {
+  background: var(--papel);
+}
+
+.servicios-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--e-5);
+}
+
+.servicio {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--e-2);
+  align-items: start;
+  padding: var(--e-3) 0;
+  border-top: 1px solid var(--borde);
+}
+
+/* Las dos primeras filas ya tienen borde superior propio */
+.servicios-lista .servicio:nth-child(-n + 2) { border-top-color: var(--musgo); }
+
+.servicio-icono {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--arena);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.servicio h3 {
+  font-size: var(--t-md);
+  margin-bottom: 0.3rem;
+}
+
+.servicio p {
+  color: var(--gris);
+  font-size: var(--t-sm);
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 46ch;
+}
+
+@media (max-width: 760px) {
+  .servicios-lista { grid-template-columns: 1fr; }
+  .servicios-lista .servicio:nth-child(2) { border-top-color: var(--borde); }
+}
