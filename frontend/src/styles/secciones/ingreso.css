@@ -1,0 +1,112 @@
+/* ============================================================
+   Huellitas · sección Ingreso de mascotas
+   A la izquierda el proceso como línea de tiempo (sí es una
+   secuencia, por eso van numerados); a la derecha el formulario.
+   ============================================================ */
+
+.ingreso {
+  background: var(--papel);
+}
+
+.ingreso-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--e-5);
+  align-items: start;
+}
+
+/* --- Línea de tiempo del proceso --- */
+.pasos {
+  list-style: none;
+  position: relative;
+  padding-left: 0;
+}
+
+/* Línea vertical que une los pasos */
+.pasos::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 12px;
+  bottom: 28px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--miel), var(--borde));
+}
+
+.paso {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: var(--e-2);
+  padding-bottom: var(--e-3);
+}
+
+.paso:last-child { padding-bottom: 0; }
+
+.paso-numero {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--miel);
+  color: var(--tinta);
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: var(--t-sm);
+}
+
+.paso-cuerpo h3 {
+  font-size: var(--t-md);
+  margin-bottom: 0.25rem;
+  padding-top: 0.35rem;
+}
+
+.paso-cuerpo p {
+  color: var(--gris);
+  font-size: var(--t-sm);
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 44ch;
+}
+
+/* --- Formulario --- */
+.ingreso-formulario {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-lg);
+  padding: var(--e-4);
+  box-shadow: var(--sombra-suave);
+  position: sticky;
+  top: calc(var(--alto-header) + 24px);
+}
+
+.ingreso-formulario h3 {
+  font-size: var(--t-lg);
+  margin-bottom: var(--e-3);
+}
+
+.ingreso-formulario .aviso { margin-bottom: var(--e-2); }
+
+.ingreso-formulario .boton { width: 100%; margin-top: var(--e-1); }
+
+.ingreso-nota {
+  margin-top: var(--e-2);
+  font-size: var(--t-xs);
+  color: var(--gris);
+  text-align: center;
+}
+
+.ingreso-nota code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--arena);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .ingreso-inner { grid-template-columns: 1fr; gap: var(--e-4); }
+  .ingreso-formulario { position: static; padding: var(--e-3); }
+}

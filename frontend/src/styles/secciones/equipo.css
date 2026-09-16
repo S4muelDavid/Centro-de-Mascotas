@@ -1,0 +1,47 @@
+/* ============================================================
+   Huellitas · sección Equipo
+   ============================================================ */
+
+.equipo { background: var(--papel); }
+
+.equipo-subtitulo {
+  font-family: var(--fuente-titulo);
+  font-size: var(--t-md);
+  color: var(--bosque);
+  margin: var(--e-4) 0 var(--e-2);
+}
+
+.equipo-subtitulo:first-of-type { margin-top: var(--e-2); }
+
+.equipo-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: var(--e-2);
+}
+
+.persona {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  padding: var(--e-2);
+  background: var(--arena);
+  border-radius: 14px;
+}
+
+.persona-avatar {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--bosque);
+  color: var(--blanco);
+  font-family: var(--fuente-titulo);
+  font-size: var(--t-sm);
+  flex-shrink: 0;
+}
+
+.persona h4 { font-size: var(--t-base); margin-bottom: 0.15rem; }
+.persona-rol { font-size: var(--t-sm); color: var(--musgo); }
+.persona-contacto { font-size: var(--t-xs); color: var(--gris); margin-top: 0.1rem; }

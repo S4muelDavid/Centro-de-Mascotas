@@ -1,0 +1,90 @@
+/* ============================================================
+   Huellitas · sección Tienda
+   ============================================================ */
+
+.tienda { background: var(--arena); }
+
+.tienda-cifras {
+  display: flex;
+  gap: var(--e-4);
+  margin: var(--e-3) 0 var(--e-3);
+  flex-wrap: wrap;
+}
+
+.tienda-cifras dt {
+  font-size: var(--t-xs);
+  color: var(--gris);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tienda-cifras dd {
+  font-family: var(--fuente-titulo);
+  font-size: var(--t-lg);
+  color: var(--bosque);
+}
+
+.tienda-buscador {
+  width: 100%;
+  max-width: 360px;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--borde);
+  background: var(--papel);
+  font-family: var(--fuente-texto);
+  font-size: var(--t-sm);
+  margin-bottom: var(--e-3);
+}
+
+.tienda-lista {
+  list-style: none;
+  display: grid;
+  gap: var(--e-2);
+}
+
+.producto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--e-3);
+  padding: var(--e-3);
+  background: var(--papel);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+}
+
+.producto-cuerpo h3 { font-size: var(--t-base); margin-bottom: 0.2rem; }
+.producto-cuerpo p { color: var(--gris); font-size: var(--t-sm); font-weight: 300; }
+.producto-proveedor { font-size: var(--t-xs); color: var(--musgo); margin-top: 0.2rem; }
+
+.producto-datos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.producto-precio {
+  font-family: var(--fuente-titulo);
+  font-size: var(--t-md);
+  color: var(--tinta);
+}
+
+.producto-stock {
+  font-size: var(--t-xs);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.stock-ok      { background: #E4F1E8; color: var(--exito); }
+.stock-bajo    { background: #FBEDD9; color: #9C6A16; }
+.stock-agotado { background: #F6E1DC; color: var(--error); }
+
+.tienda-vacio { color: var(--gris); padding: var(--e-3) 0; }
+
+@media (max-width: 640px) {
+  .producto { flex-direction: column; align-items: flex-start; }
+  .producto-datos { align-items: flex-start; }
+}

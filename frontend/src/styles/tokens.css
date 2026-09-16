@@ -1,0 +1,189 @@
+/* ============================================================
+   Huellitas · tokens de diseño
+   Un solo lugar para color, tipografía, espaciado y sombras.
+   Cambia algo aquí y cambia en todo el sitio.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap');
+
+:root {
+  /* --- Color --- */
+  --tinta:      #142620;  /* texto principal, verde casi negro */
+  --bosque:     #2E5D4B;  /* color de marca, fondos profundos */
+  --musgo:      #4C8064;  /* verde medio, bordes y detalles */
+  --miel:       #E8A33D;  /* acento principal */
+  --coral:      #D9644A;  /* acento secundario, alertas cálidas */
+  --papel:      #FBF8F3;  /* fondo general */
+  --arena:      #F2E9DA;  /* superficies alternas */
+  --borde:      #E2D6C2;
+  --gris:       #6E7A72;  /* texto secundario */
+  --blanco:     #FFFFFF;
+  --error:      #B23C2B;
+  --exito:      #2F7A52;
+
+  /* --- Tipografía --- */
+  --fuente-titulo: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --fuente-texto:  'Outfit', 'Segoe UI', system-ui, sans-serif;
+
+  --t-xs:   0.8125rem;
+  --t-sm:   0.9375rem;
+  --t-base: 1.0625rem;
+  --t-md:   1.25rem;
+  --t-lg:   1.625rem;
+  --t-xl:   2.25rem;
+  --t-2xl:  3rem;
+  --t-3xl:  4rem;
+
+  /* --- Espaciado --- */
+  --e-1: 0.5rem;
+  --e-2: 1rem;
+  --e-3: 1.5rem;
+  --e-4: 2rem;
+  --e-5: 3rem;
+  --e-6: 4.5rem;
+  --e-7: 7rem;
+
+  /* --- Formas y sombras --- */
+  --radio-sm: 8px;
+  --radio-md: 14px;
+  --radio-lg: 24px;
+  --sombra-suave: 0 2px 8px rgba(20, 38, 32, 0.06);
+  --sombra-media: 0 12px 32px rgba(20, 38, 32, 0.10);
+  --sombra-alta:  0 28px 60px rgba(20, 38, 32, 0.22);
+
+  --ancho-max: 1180px;
+  --alto-header: 76px;
+}
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--alto-header) + 16px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  font-size: var(--t-base);
+  line-height: 1.6;
+  color: var(--tinta);
+  background: var(--papel);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulo);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  font-variation-settings: 'SOFT' 30, 'WONK' 1;
+}
+
+img { max-width: 100%; display: block; }
+button { font: inherit; color: inherit; cursor: pointer; border: none; background: none; }
+input, textarea, select { font: inherit; color: inherit; }
+a { color: inherit; }
+
+/* Foco visible para quien navega con teclado */
+:focus-visible {
+  outline: 3px solid var(--miel);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* --- Utilidades compartidas --- */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: 0 var(--e-3);
+}
+
+.seccion {
+  padding: var(--e-7) 0;
+}
+
+.seccion-encabezado {
+  max-width: 58ch;
+  margin-bottom: var(--e-5);
+}
+
+.seccion-encabezado h2 {
+  font-size: var(--t-xl);
+  margin-bottom: var(--e-2);
+}
+
+.seccion-encabezado p {
+  color: var(--gris);
+  font-size: var(--t-md);
+  font-weight: 300;
+}
+
+/* Botones */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-1);
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: var(--t-sm);
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.boton:hover { transform: translateY(-2px); }
+.boton:active { transform: translateY(0); }
+.boton:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+.boton-primario {
+  background: var(--miel);
+  color: var(--tinta);
+  box-shadow: var(--sombra-suave);
+}
+.boton-primario:hover { background: #F0B257; }
+
+.boton-solido {
+  background: var(--bosque);
+  color: var(--blanco);
+}
+.boton-solido:hover { background: #3A7159; }
+
+.boton-contorno {
+  border: 1.5px solid currentColor;
+  background: transparent;
+}
+
+.boton-claro {
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  color: var(--blanco);
+}
+.boton-claro:hover { background: rgba(255, 255, 255, 0.12); }
+
+/* Mensajes de estado */
+.aviso {
+  padding: 0.8rem 1rem;
+  border-radius: var(--radio-sm);
+  font-size: var(--t-sm);
+  border-left: 3px solid;
+}
+.aviso-error   { background: #FBEAE6; color: var(--error); border-color: var(--error); }
+.aviso-exito   { background: #E7F3EC; color: var(--exito); border-color: var(--exito); }
+
+/* Quien prefiera menos movimiento, que no lo tenga */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
